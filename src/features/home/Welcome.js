@@ -7,23 +7,11 @@ export default class Welcome extends PureComponent {
     return (
       <div className="home-welcome">
         <h2>
-          Welcome to Command Pad!
+          欢迎使用
         </h2>
+        <p>点击下面开始创建第一个命令</p>
         <p>
-          Command Pad is a central place for managing your command line programs.
-        </p>
-        <p>
-          It's motivated by the need for running multiple dev servers for modern web development. Such as: Webpack dev-server, Storybook dev-server, Gitbook dev-server, API proxy server etc.
-        </p>
-        <p>
-          It also could be used for other scenarios, such as running tests, launching Java apps, etc.
-        </p>
-        <p>
-          Command Pad is an open source app. Any question or advice please visit the <a href="https://github.com/supnate/command-pad">project page</a> on GitHub.
-        </p>
-        <p>Now click below button to add your first command!</p>
-        <p>
-          <Button type="primary" onClick={() => hashHistory.push('/cmd/add')}>Add Command</Button>
+          <Button type="primary" onClick={() => hashHistory.push('/cmd/add')}>添加命令</Button>
         </p>
       </div>
     );

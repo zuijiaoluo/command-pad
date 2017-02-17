@@ -50,21 +50,21 @@ export class CmdEditPage extends Component {
       <div className="rekit-page home-cmd-edit-page">
         <div className="header">
           <Link to="/"><Icon type="arrow-left" /></Link>
-          <h1>{cmdId ? 'Edit' : 'Add'} Command</h1>
+          <h1>{cmdId ? '编辑' : '添加'} 命令</h1>
         </div>
         <div className="page-content">
           <Form vertical required style={{ margin: 15 }} onSubmit={memobind(this, 'handleSubmit')}>
-            <FormItem label="Name">
+            <FormItem label="命令的名称">
               {getFieldDecorator('name', {
                 initialValue: initialData.name || '',
                 rules: [
-                  { required: true, whitespace: true, message: 'Name is required.' }
+                  { required: true, whitespace: true, message: '名字已经存在' }
                 ],
               })(
                 <Input size="default" />
               )}
             </FormItem>
-            <FormItem label={this.getFormItemLabel('Command', 'The command to run, e.g., "npm start"')}>
+            <FormItem label={this.getFormItemLabel('命令', '你需要运行的命令')}>
               {getFieldDecorator('cmd', {
                 initialValue: initialData.cmd || '',
                 rules: [
@@ -79,33 +79,33 @@ export class CmdEditPage extends Component {
                 valuePropName: 'checked',
                 initialValue: !!initialData.sudo,
               })(
-                <Checkbox>{this.getFormItemLabel('Sudo', 'Whether the command needs administrative privileges.')}</Checkbox>
+                <Checkbox>{this.getFormItemLabel('Sudo', '如果命令需要管理员权限')}</Checkbox>
               )}
             </FormItem>}
-            <FormItem label={this.getFormItemLabel('Working directory', 'Optional. The working directory to run the command.')}>
+            <FormItem label={this.getFormItemLabel('工作目录', '运行命令的目录')}>
               {getFieldDecorator('cwd', {
                 initialValue: initialData.cwd || '',
               })(
                 <Input size="default" />
               )}
             </FormItem>
-            <FormItem label={this.getFormItemLabel('Url', 'Optional. If provided, there will be a icon to open the link. Usually for dev servers, e.g., "http://localhost:6076".')}>
+            <FormItem label={this.getFormItemLabel('Url', '可选。可以直接打开浏览器，例如，"http://127.0.0.1:9999"')}>
               {getFieldDecorator('url', {
                 initialValue: initialData.url || '',
               })(
                 <Input size="default" />
               )}
             </FormItem>
-            
+
             <FormItem>
               {getFieldDecorator('finishPrompt', {
                 valuePropName: 'checked',
                 initialValue: !!initialData.finishPrompt,
               })(
-                <Checkbox>{this.getFormItemLabel('Notification when finished', 'Optional. Whether to show a notification when the is command finished/failed, it\'s useful for long-time commands. It will not notify you if manually stopping it.')}</Checkbox>
+                <Checkbox>{this.getFormItemLabel('完成通知', '当出错时提醒应该也会提醒')}</Checkbox>
               )}
             </FormItem>
-            
+
             <FormItem className="buttons">
               <Button size="default" type="primary" htmlType="submit">Ok</Button>
               <Button size="default" onClick={() => hashHistory.push('/')}>Cancel</Button>

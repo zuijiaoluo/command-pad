@@ -21,12 +21,12 @@ export class AboutPage extends Component {
         <div className="page-content">
           <div className="title-wrapper">
             <img src={require('../../images/logo.png')} alt="logo" className="logo" />
-            <h2>Command Pad</h2>
+            <h2>涛涛私人版</h2>
             <div>Version {this.props.home.appVersion}</div>
           </div>
-          <p>Command Pad is a central place for managing your command line programs.</p>
-          <p>Any questions or advice? Please visit:</p>
-          <ALink url="https://github.com/supnate/command-pad">https://github.com/supnate/command-pad</ALink>
+          <p>本项目纯属娱乐,如果商业使用请联系作者</p>
+          <h3>.</h3>
+          <h3>.</h3>
           <h3>Powered by</h3>
           <p className="powered-by">
             <ALink url="https://github.com/electron/electron">
@@ -36,10 +36,10 @@ export class AboutPage extends Component {
             <ALink url="https://github.com/supnate/rekit">
               <img alt="rekit logo" className="rekit-logo" src={require('../../images/rekit_logo.png')} />
             </ALink>
-          </p>
-          <h3>Creator</h3>
-          <p>
-            Nate Wang (<ALink url="https://twitter.com/@webows">@webows</ALink>)
+            <br />
+            <ALink url="https://github.com/supnate/command-pad">
+              <img alt="command_pad logo" className="command_pad-logo" src={require('../../images/command_logo.png')} />
+            </ALink>
           </p>
         </div>
       </div>

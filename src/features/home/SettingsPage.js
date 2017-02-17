@@ -48,14 +48,14 @@ export class SettingsPage extends Component {
         </div>
         <div className="page-content">
           <Form vertical required style={{ margin: 15 }} onSubmit={this.handleSubmit}>
-            <FormItem label={this.getFormItemLabel('Max output rows', 'The max number of output rows.')}>
+            <FormItem label={this.getFormItemLabel('最大输出行数', '命令窗口最大的输出行数')}>
               {getFieldDecorator('outputRowsLimit', {
                 initialValue: this.props.home.outputRowsLimit || 100,
               })(
                 <InputNumber size="default" style={{ width: '100%' }} />
               )}
             </FormItem>
-            <FormItem label={this.getFormItemLabel('Environment path', 'The environment path to find the command. You may need to set this when using nvm.')}>
+            <FormItem label={this.getFormItemLabel('环境路径', '如果你使用了nvm')}>
               {getFieldDecorator('envPath', {
                 initialValue: this.props.home.envPath || '',
               })(
